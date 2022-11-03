@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Personeller>
+
+@{
+    ViewBag.Title = "Liste";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Liste</h2>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <td><input type="checkbox" id="checkall" /></td>
+    <th> Perno</th>
+    <th> Adı</th>
+    <th> Soyadı</th>
+    <th> Şehir</th>
+    <th>İşlem</th>
+
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><input type="checkbox" class="checkthis" /></td>
+            <td>@item.PersonelID</td>
+            <td>@item.Adi</td>
+            <td>@item.SoyAdi</td>
+            <td>@item.Sehir</td>
+            <td>
+                <button class="btn btn-primary">Ekle</button>
+                <button class="btn btn-danger">Sil</button>
+                <button class="btn btn-success">Düzelt</button>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+$("#mytable #checkall").click(function () {
+        if ($("#mytable #checkall").is(':checked')) {
+            $("#mytable input[type=checkbox]").each(function () {
+                $(this).prop("checked", true);
+            });
+
+        } else {
+            $("#mytable input[type=checkbox]").each(function () {
+                $(this).prop("checked", false);
+            });
+        }
+    });
+    
+    $("[data-toggle=tooltip]").tooltip();
+});
+
+
+</script>
