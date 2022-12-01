@@ -69,6 +69,34 @@
                                         <li><a href="index3.html">Dashboard3</a></li>
                                     </ul>
                                 </li>
+
+                                <li>
+                                    <a><i class="fa fa-child"></i> Personel <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/Personel/Liste">Listele</a></li>
+                                        <li><a href="index2.html">Raporlar</a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a><i class="fa fa-user"></i> Ürün İşlemleri <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="index.html">Listele</a></li>
+                                        <li><a href="index2.html">Ürün Raporlar</a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a><i class="fa fa-shopping-basket"></i> Satış İşlemleri <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="index.html">Satış Yap</a></li>
+                                        <li><a href="index2.html">Satış Raporlar</a></li>
+
+                                    </ul>
+                                </li>
+
                                 <li>
                                     <a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
@@ -285,17 +313,20 @@
             </div>
             <!-- /top navigation -->
             <!-- page content -->
-            @RenderBody()
-            <!-- /page content -->
-            <!-- footer content -->
-            <footer>
-                <div class="pull-right">
-                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            <div class="right_col" role="main">
+                @RenderBody()
+                <!-- /page content -->
+                <!-- footer content -->
                 </div>
-                <div class="clearfix"></div>
-            </footer>
-            <!-- /footer content -->
-        </div>
+
+                <footer>
+                    <div class="pull-right">
+                        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </footer>
+                <!-- /footer content -->
+            </div>
     </div>
 
     <!-- jQuery -->
