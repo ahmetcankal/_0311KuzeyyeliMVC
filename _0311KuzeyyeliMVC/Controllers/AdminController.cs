@@ -13,5 +13,7 @@ namespace _0311KuzeyyeliMVC.Controllers
         {
             return View();
         }
+      
+
     }
 }

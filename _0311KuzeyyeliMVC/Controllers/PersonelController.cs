@@ -8,6 +8,8 @@ namespace _0311KuzeyyeliMVC.Controllers
 {
     public class PersonelController : Controller
     {
+        NorthwindEntities db = new NorthwindEntities();
+
         // GET: Personel
         public ActionResult Index()
         {
@@ -20,7 +22,7 @@ namespace _0311KuzeyyeliMVC.Controllers
 
         public ActionResult Liste()
         {
-            NorthwindEntities db = new NorthwindEntities();
+            
             var sonuc = db.Personeller.ToList();
 
             return View(sonuc);
@@ -29,9 +31,15 @@ namespace _0311KuzeyyeliMVC.Controllers
         {
             return View();
         }
-        public ActionResult Sil()
+        public ActionResult Sil(int id)
         {
-            return View();
+            var silinecek = db.Personeller.FirstOrDefault(x => x.PersonelID == id);
+
+            db.Personeller.Remove(silinecek);
+            db.SaveChanges();
+
+            return RedirectToAction("Liste");
+            
         }
 
     }
