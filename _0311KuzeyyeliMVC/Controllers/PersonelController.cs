@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
+   
+
+
 namespace _0311KuzeyyeliMVC.Controllers
 {
     public class PersonelController : Controller
@@ -15,8 +19,18 @@ namespace _0311KuzeyyeliMVC.Controllers
         {
             return View();
         }
+
+        [HttpGet]
         public ActionResult Ekle()
         {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Ekle(Personeller yeniper)
+        {
+            db.Personeller.Add(yeniper);
+            db.SaveChanges();
+
             return View();
         }
 
@@ -27,9 +41,17 @@ namespace _0311KuzeyyeliMVC.Controllers
 
             return View(sonuc);
         }
+
+       [HttpGet]
         public ActionResult Ara()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult Ara(Personeller frmgelen)
+        {
+            var sonuc = db.Personeller.Where(x => (x.Adi.Contains(frmgelen.Adi)|| x.SoyAdi.Contains(frmgelen.SoyAdi))).ToList();
+            return View("Liste",sonuc);
         }
         public ActionResult Sil(int id)
         {
