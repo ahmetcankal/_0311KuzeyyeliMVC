@@ -151,7 +151,9 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ArayuzController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
+    <Compile Include="Controllers\UrunlerController.cs" />
     <Compile Include="CustOrderHist_Result.cs">
       <DependentUpon>KuyeyGuney.tt</DependentUpon>
     </Compile>
@@ -5225,10 +5227,12 @@
     <Content Include="Views\Arayuz\Index.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Urunler\Liste.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Kategori\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
