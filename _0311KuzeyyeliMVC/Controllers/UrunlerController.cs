@@ -21,6 +21,14 @@ namespace _0311KuzeyyeliMVC.Controllers
             var sonuc = db.Urunler.Where(x=>x.KategoriID==id).ToList();
             return View(sonuc);
         }
+        public ActionResult Detay(int id)
+        {
+            var urundetay = db.Urunler.FirstOrDefault(x => x.UrunID == id);
+
+
+
+            return View(urundetay);
+        }
 
 
     }
